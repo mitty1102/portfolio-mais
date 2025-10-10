@@ -1,7 +1,6 @@
 .home {
   text-align: center;
   padding: 10rem 2rem;
-  background-color: #fdf6f0;
   color: #333;
 
   h1 {
@@ -13,4 +12,113 @@
     font-size: 1.2rem;
     color: #555;
   }
+}
+
+.box {
+  position: relative;
+ // background-color: #111; /* dark background like your screenshot */
+  color: white;
+}
+.pastel-bubbles {
+  background: #ffc0cb; /* pastel pink base */
+  position: relative;
+}
+
+/* Bubbles using pseudo-elements */
+.pastel-bubbles::before,
+.pastel-bubbles::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: #FFFF99;
+  opacity: 0.3; /* soft look */
+}
+
+/* Example bubbles */
+.pastel-bubbles::before {
+  width: 60px;
+  height: 60px;
+  top: 20px;
+  left: 30px;
+}
+
+.pastel-bubbles::after {
+  width: 100px;
+  height: 100px;
+  bottom: 30px;
+  right: 40px;
+}
+
+
+/* Bottom-right corner lines */
+.bottom-left-vertical,
+.bottom-left-horizontal {
+  position: absolute;
+  background: linear-gradient(to top/right, #ffd700, transparent);
+}
+
+.bottom-left-vertical {
+  top: 0;
+  left: 10%;
+  height: 35%;   /* vertical line length */
+  width: 8px;     /* line thickness */
+    background: linear-gradient(to bottom, #ffd700, transparent);
+}
+
+.bottom-left-horizontal {
+  top: 0;
+  left: 10%;
+  width: 30%;    /* horizontal line length */
+  height: 8px;    /* thickness */
+    background: linear-gradient(to right, #ffd700, transparent);
+}
+
+/* Bottom-right corner lines */
+.bottom-right-vertical,
+.bottom-right-horizontal {
+  position: absolute;
+  background: linear-gradient(to top/right, #ffd700, transparent);
+}
+
+.bottom-right-vertical {
+  bottom: 0;
+  right: 10%;
+  width: 8px;
+  height: 35%;
+  background: linear-gradient(to top, #ffd700, transparent);
+}
+
+.bottom-right-horizontal {
+  bottom: 0;
+  right: 10%;
+  width: 30%;
+  height: 8px;
+  background: linear-gradient(to left, #ffd700, transparent);
+}
+
+/* Top-left corner */
+.no::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50%;
+  width: 8px;
+  background: linear-gradient(to bottom, #ffd700, transparent);
+}
+
+.no::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 8px;
+  background: linear-gradient(to right, #ffd700, transparent);
+}
+
+.center-aligned{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

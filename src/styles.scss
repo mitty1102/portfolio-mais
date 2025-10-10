@@ -1,1 +1,146 @@
+
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$rose-palette,
+      tertiary: mat.$red-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
 /* You can add global styles to this file, and also import other style files */
+/* Make html and body take full height */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+div{
+  line-height: 1.3;
+}
+
+/* Make app root fill the viewport */
+app-root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Padding utilities */
+.padding-x-s { padding-left: 8px; padding-right: 8px; }
+.padding-x-m { padding-left: 16px; padding-right: 16px; }
+.padding-x-l { padding-left: 32px; padding-right: 32px; }
+
+.padding-y-s { padding-top: 8px; padding-bottom: 8px; }
+.padding-y-m { padding-top: 16px; padding-bottom: 16px; }
+.padding-y-l { padding-top: 32px; padding-bottom: 32px; }
+
+/* Margin utilities */
+.margin-x-s { margin-left: 8px; margin-right: 8px; }
+.margin-x-m { margin-left: 16px; margin-right: 16px; }
+.margin-x-l { margin-left: 32px; margin-right: 32px; }
+
+.margin-y-s { margin-top: 8px; margin-bottom: 8px; }
+.margin-y-m { margin-top: 16px; margin-bottom: 16px; }
+.margin-y-l { margin-top: 32px; margin-bottom: 32px; }
+
+.padding-s{
+   padding-left: 8px; padding-right: 8px; 
+   padding-top: 8px; padding-bottom: 8px;
+}
+.padding-m{
+   padding-left: 16px; padding-right: 16px; 
+   padding-top: 16px; padding-bottom: 16px;
+}
+
+.padding-l{
+   padding-left: 32px; padding-right: 32px; 
+   padding-top: 32px; padding-bottom: 32px;
+}
+
+/* Margin Top */
+.mt-s { margin-top: 0.5rem; }
+.mt-m { margin-top: 1rem; }
+.mt-l { margin-top: 2rem; }
+
+/* Margin Bottom */
+.mb-s { margin-bottom: 0.5rem; }
+.mb-m { margin-bottom: 1rem; }
+.mb-l { margin-bottom: 2rem; }
+
+/* Margin Left */
+.ml-s { margin-left: 0.5rem; }
+.ml-m { margin-left: 1rem; }
+.ml-l { margin-left: 2rem; }
+
+/* Margin Right */
+.mr-s { margin-right: 0.5rem; }
+.mr-m { margin-right: 1rem; }
+.mr-l { margin-right: 2rem; }
+
+
+
+
+/* Example for text alignment */
+.text-center { text-align: center; }
+
+.w-100{
+  width: 100%
+}
+.h-100{
+  height: 100%;
+}
+
+/* 🎨 Font size utilities */
+.f-10 { font-size: 10px; }
+.f-11 { font-size: 11px; }
+.f-12 { font-size: 12px; }
+.f-13 { font-size: 13px; }
+.f-14 { font-size: 14px; }
+.f-15 { font-size: 15px; }
+.f-16 { font-size: 16px; }
+.f-17 { font-size: 17px; }
+.f-18 { font-size: 18px; }
+.f-19 { font-size: 19px; }
+.f-20 { font-size: 20px; }
+.f-22 { font-size: 22px; }
+.f-24 { font-size: 24px; }
+.f-26 { font-size: 26px; }
+.f-28 { font-size: 28px; }
+.f-30 { font-size: 30px; }
+.f-32 { font-size: 32px; }
+.f-36 { font-size: 36px; }
+.f-40 { font-size: 40px; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
