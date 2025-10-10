@@ -1,0 +1,20 @@
+.contact {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #fff0f3;
+
+  h2 {
+    color: #ffb5a7;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: #a8dadc;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
