@@ -4,27 +4,34 @@ import Swiper from 'swiper';
 import { SwiperOptions } from 'swiper/types';
 import { EffectCoverflow, Pagination, Autoplay } from 'swiper/modules';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap'; // 👈 import this
 // Register the Swiper modules
 Swiper.use([EffectCoverflow, Pagination, Autoplay]);
 @Component({
   selector: 'app-projects',
-  imports: [CommonModule],
+  imports: [CommonModule,NgbModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
     schemas: [CUSTOM_ELEMENTS_SCHEMA]  // ✅ Add this line
 })
 export class ProjectsComponent {
+
+  
+  constructor(private modalService: NgbModal) {}
+
   images = [
-    'assets/images/baselineReport.png',
+    'assets/images/landingPage.png',
+    'assets/images/featuresPage.png',
     'assets/images/FaqArabic.png',
-    'assets/images/FeaturesPage.png',
+    'assets/images/strategyTree2.png',
+    'assets/images/baselineReport.png',
     'assets/images/initiativeDialog.png',
     'assets/images/InitiativePageArabic.png',
     'assets/images/initiativePageEnglish.png',
     'assets/images/kpiPageArabic.png',
     'assets/images/kpiPageEnglish.png',
-    'assets/images/landingPage.png',
-    'assets/images/professionTab.png',
+    'assets/images/settingsPage.png',
     'assets/images/pwh.jpg',
     'assets/images/pwhchoose.jpeg',
     'assets/images/pwhform.jpeg',
@@ -75,4 +82,10 @@ export class ProjectsComponent {
     prevEl: '.swiper-button-prev',
   },
 });
+
+selectedImage: any;
+  openModal(content: any, img: any) {
+    this.selectedImage = img;
+    this.modalService.open(content, { centered: true, size: 'lg' });
+  }
 }
