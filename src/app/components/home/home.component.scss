@@ -17,10 +17,9 @@
 .box {
   position: relative;
  // background-color: #111; /* dark background like your screenshot */
-  color: white;
+  color: #9d2f2fa1;
 }
 .pastel-bubbles {
-  background: #ffc0cb; /* pastel pink base */
   position: relative;
 }
 
@@ -121,4 +120,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.color-background{
+  background-color: #ffffc5 !important;
+  color: #9d2f2fa1 !important
 }

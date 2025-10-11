@@ -2,24 +2,28 @@
   class="mySwiper"
   navigation="true"
   slides-per-view="auto"
+  [pagination]="{ clickable: true }"
+  [loop]="true"
   effect="coverflow"
   grab-cursor="true"
   centered-slides="true"
   coverflow-effect='{"rotate":50,"stretch":0,"depth":100,"modifier":1,"slideShadows":true}'
 >
-  <swiper-slide *ngFor="let img of images" (click)="openModal(content, img)">
-    <img style="object-fit: fill;" [src]="img" alt="Slide" class="slide-img" />
-    
+  <swiper-slide *ngFor="let img of images">
+    <img (click)="openModal(content, img)" style="object-fit: fill;" [src]="img.src" alt="Slide" class="slide-img cursor-pointer" />
   </swiper-slide>
 </swiper-container>
 
 <ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title">{{ selectedImage?.name }}</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
+  <div class="color-background" style="padding: 5% 5%; border-radius: 6px;">
+    <header class="mb-4">
+      <h4 class="modal-title padding-none text-center">{{ selectedImage?.name }}</h4>
+    </header>
+    <mat-dialog-content>
+      <div class="modal-body text-center padding-none">
+        <p class="margin-bottom-none f-17">{{ selectedImage?.description }}</p>
+      </div>
+    </mat-dialog-content>
   </div>
-  <div class="modal-body text-center">
-    <img [src]="selectedImage?.src" alt="{{ selectedImage?.name }}" style="max-width:100%; border-radius:8px;">
-    <p class="mt-3">{{ selectedImage?.description }}</p>
-  </div>
+
 </ng-template>

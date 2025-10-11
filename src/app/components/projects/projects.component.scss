@@ -1,4 +1,4 @@
-    swiper-container {
+   swiper-container {
       width: 50%;
       height: 100%;
     }
@@ -23,15 +23,19 @@
     }
 
     
-    .swiper-button-next{
-           color: #ffc0cb !important; 
-    }
+  swiper-button-next{
+          color: #ffc0cb !important; 
+  }
+
+    
 
 .mySwiper {
   width: 80%;
   max-width: 900px;
   height: 100%;
   margin: auto;
+  --swiper-navigation-color: #ffc0cb;
+      --swiper-theme-color: #ffc0cb;
 }
 
 .slide-img {
@@ -42,4 +46,5 @@
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   transition: transform 0.3s;
 }
+
 

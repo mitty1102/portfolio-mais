@@ -1,7 +1,14 @@
-<nav class="navbar background-white">
-  <div class="logo">Mais Dalbah</div>
+<nav class="navbar">
+  <div class="d-flex">
+    <div class="logo mt-1">Mais Dalbah</div>
+    <div class="profile-avatar">
+      <img src='assets/images/myProfile.jpeg' alt="Profile" />
+    </div>
+    </div>
   <ul>
-    <li><a mat-button routerLink="/">Home</a></li>
+<li>
+  <a mat-button class="cursor-pointer" [routerLink]="['/']">Home</a>
+</li>
     <li><a routerLink="/about">About</a></li>
     <li><a routerLink="/web-pages">Web pages</a></li>
     <li><a routerLink="/contact">Contact</a></li>
