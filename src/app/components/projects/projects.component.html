@@ -1,15 +1,13 @@
-<swiper
-  [slidesPerView]="3"
-  [spaceBetween]="30"
-  [centeredSlides]="true"
-  [loop]="true"
+<swiper-container
   class="mySwiper"
+  navigation="true"
+  slides-per-view="auto"
+  effect="coverflow"
+  grab-cursor="true"
+  centered-slides="true"
+  coverflow-effect='{"rotate":50,"stretch":0,"depth":100,"modifier":1,"slideShadows":true}'
 >
-  <ng-template swiperSlide *ngFor="let page of webPages">
-    <img 
-      [src]="page.image" 
-      (click)="openDetails(page)" 
-      style="cursor: pointer; width: 200px; height: 300px;"
-    />
-  </ng-template>
-</swiper>
+  <swiper-slide *ngFor="let img of images">
+    <img [src]="img" alt="Slide" class="slide-img" />
+  </swiper-slide>
+</swiper-container>
