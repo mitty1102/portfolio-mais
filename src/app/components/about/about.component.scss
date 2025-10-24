@@ -11,3 +11,23 @@
     text-align: center;
   }
 }
+
+.horizontal-list {
+  list-style-type: none;
+  display: flex;              /* or inline-flex */
+  flex-wrap: wrap;
+  gap: 2rem;                  /* space between bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.horizontal-list li:first-child {
+  list-style-type: none; /* removes bullet from first item */
+}
+
+.horizontal-list li {
+  display: list-item;         /* ensures bullets show */
+  font-weight: 700;
+  font-size: 20px;
+  text-wrap-mode: nowrap;
+}

@@ -181,3 +181,28 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .d-flex{
   display: flex;
 }
+
+.justify-content-center{
+  justify-content: center;
+}
+
+.justify-content-between{
+  justify-content: space-between;
+}
+
+.text-tooti{
+  color:#9d2f2fa1;
+}
+
+.font-bold{
+  font-weight: 700;
+}
+.font-semi-bold{
+  font-weight: 600;
+}
+.font-medium{
+  font-weight: 500;
+}
+.font-regular{
+  font-weight: 400;
+}
