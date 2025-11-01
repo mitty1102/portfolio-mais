@@ -206,3 +206,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .font-regular{
   font-weight: 400;
 }
+
+.mat-mdc-form-field-error-wrapper {
+  padding: 0px 0px !important;
+}
+
+:root{
+  --mat-form-field-outlined-focus-outline-color: #cf949e !important;
+}

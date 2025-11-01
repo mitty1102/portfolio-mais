@@ -29,22 +29,52 @@
 
     
 
-.mySwiper {
+   
+.mySwiper::before,
+.mySwiper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 10;
   width: 80%;
   max-width: 900px;
   height: 100%;
   margin: auto;
   --swiper-navigation-color: #ffc0cb;
-      --swiper-theme-color: #ffc0cb;
+  --swiper-theme-color: #ffc0cb;
 }
+
+.mySwiper::before {
+  left: 0;
+  background: transparent;
+}
+.mySwiper::after {
+  right: 0;
+  background: transparent;
+}
+
 
 .slide-img {
-  width: 50%;      /* width of each slide */
-  height: 70%;     /* height of each slide */
+  width: 100%;
+  height: 400px;
   object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+.slide-img:hover {
+  transform: scale(1.03);
 }
 
 
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+.color-background {
+  animation: fadeInScale 0.2s ease-out;
+}

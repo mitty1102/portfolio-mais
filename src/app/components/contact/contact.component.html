@@ -17,13 +17,13 @@
         </div>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-6 d-flex justify-content-center">
        <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="w-full max-w-md p-8 rounded-2xl shadow-md space-y-5">
   
         <div class="text-tooti f-16 font-medium">
           Name*
         </div>
-        <mat-form-field appearance="outline" class="col-lg-8 col-sm-4">
+        <mat-form-field appearance="outline" class="col-lg-10 col-sm-6">
           <input matInput formControlName="name" required />
           <mat-error *ngIf="contactForm.get('name')?.hasError('required')">
             Name is required
@@ -33,7 +33,7 @@
         <div class="text-tooti f-16 font-medium">
           Email*
         </div>
-        <mat-form-field appearance="outline" class="col-lg-8 col-sm-4">
+        <mat-form-field appearance="outline" class="col-lg-10 col-sm-6">
           <input matInput formControlName="email" required type="email" />
           <mat-error *ngIf="contactForm.get('email')?.hasError('required')">
             Email is required
@@ -46,14 +46,14 @@
         <div class="text-tooti f-16 font-medium">
           Message*
         </div>
-        <mat-form-field appearance="outline" class="col-lg-8 col-sm-4">
+        <mat-form-field appearance="outline" class="col-lg-10 col-sm-6">
           <textarea matInput formControlName="message" rows="5" required></textarea>
           <mat-error *ngIf="contactForm.get('message')?.hasError('required')">
             Message is required
           </mat-error>
         </mat-form-field>
 
-        <button class="color-background margin-x-s" [disabled]="contactForm.invalid" style="width: 15rem; height: 50px;" matButton="filled" type="submit">Send Message</button>
+        <button class="color-background" [disabled]="contactForm.invalid" style="width: 15rem; height: 50px; border-radius: 6px;" matButton="filled" type="submit">Send Message</button>
 
 
       </form>
