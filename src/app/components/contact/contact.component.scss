@@ -29,3 +29,14 @@
   background-color: #ffffc5 !important;
   color: #9d2f2fa1 !important
 }
+
+.snackbar-success {
+  background-color: #4caf50; /* green */
+  color: #fff;
+  font-weight: 500;
+}
+.snackbar-error {
+  background-color: #f44336; /* red */
+  color: #fff;
+  font-weight: 500;
+}

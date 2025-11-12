@@ -213,4 +213,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :root{
   --mat-form-field-outlined-focus-outline-color: #cf949e !important;
+  --swiper-theme-color: #9d2f2fa1 !important;
+}
+
+:host {
+    --swiper-theme-color: #9d2f2fa1 !important;
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+
+  color: #9d2f2fa1 !important;
 }

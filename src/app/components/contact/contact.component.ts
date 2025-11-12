@@ -5,9 +5,10 @@ import { MatIconModule } from '@angular/material/icon';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-contact',
-  imports: [MatIconModule, CommonModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule],
+  imports: [MatIconModule, CommonModule, ReactiveFormsModule, MatInputModule, MatFormFieldModule, MatSnackBarModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -15,7 +16,9 @@ export class ContactComponent implements OnInit{
 
     contactForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+    private snackBar: MatSnackBar
+  ) {}
   ngOnInit(): void {
       this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -42,29 +45,39 @@ export class ContactComponent implements OnInit{
       },
     ]
 
- sendEmail() {
+    submitted = false;
+
+  sendEmail() {
+    this.submitted = true;
     if (this.contactForm.invalid) {
       return;
     }
 
     const form = this.contactForm.value;
 
-    // Send message to your email
     emailjs.send('service_mais_email', 'template_contact_mais', form, 'VE5aOvwyrVHocOEye')
-      .then(() => console.log('✅ Message sent to your inbox'))
-      .catch((error) => console.error('❌ Failed to send to you:', error));
+      .then(() => console.log(' Message sent to your inbox'))
+      .catch((error) => console.error(' Failed to send to you:', error));
 
-    // Send auto-reply to sender
     emailjs.send('service_mais_email', 'template_mais', form, 'VE5aOvwyrVHocOEye')
       .then(() => {
-        alert('✅ Message sent successfully! Sender also received confirmation.');
+       this.snackBar.open(' Message sent successfully! Sender also received confirmation.', 'Close', {
+        duration: 4000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top',
+        panelClass: ['snackbar-success']
+        });
         this.contactForm.reset();
+        this.contactForm.markAsPristine();
+        this.contactForm.markAsUntouched();
+        this.submitted = false;
       })
       .catch((error) => {
         console.error('❌ Failed to send auto-reply:', error);
         alert('Something went wrong. Please try again later.');
       });
-  }
+    }
+
 
 
 }
