@@ -27,7 +27,7 @@ export class ProjectsComponent {
       description: 'Built a modern landing page for a strategy platform with Angular and CSS, featuring responsive design, reusable components, and a visually engaging layout.'
     },
     {
-      src: 'assets/images/featuresPage.png',
+      src: 'assets/images/FeaturesPage.png',
       name: 'Features Page',
       description: 'Developed a dynamic Features page for a strategy platform using Angular and CSS, showcasing key functionalities such as collaboration tools, personalized dashboards, task management, and ownership transfers. Implemented interactive components, modular design, and intuitive layouts to clearly communicate platform capabilities.'
     },
